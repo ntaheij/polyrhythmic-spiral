@@ -16,11 +16,10 @@
   If you want to get your hands dirty you can also take a whack at modifying the code. Just be careful messing with how the notes are played. I almost went deaf a few times lol. And feel free to use this for literally anything.
 
 */
-
-const paper = document.getElementById('paper')
-const pen = paper.getContext('2d')
-
 const get = (selector) => document.querySelector(selector)
+
+const paper = get('#paper')
+const pen = paper.getContext('2d')
 
 const toggles = {
   sound: get('#sound-toggle')
@@ -68,7 +67,7 @@ const handleSoundToggle = (enabled = !settings.soundEnabled) => {
 }
 
 const handleBackgroundToggle = () => {
-  const backgroundElem = document.getElementById('background-image')
+  const backgroundElem = get('#background-image')
   const style =
     backgroundElem.currentStyle ||
     window.getComputedStyle(backgroundElem, false)
@@ -80,9 +79,8 @@ const handleBackgroundToggle = () => {
     .split('-')
     .pop()
 
-  backgroundElem.style.backgroundImage = `url('img/backgrounds/${
-    (parseInt(currentIndex) + 1) % imagesAmount
-  }.webp')`
+  backgroundElem.style.backgroundImage = `url('img/backgrounds/${(parseInt(currentIndex) + 1) % imagesAmount
+    }.webp')`
 }
 
 const handleShuffle = () => {
