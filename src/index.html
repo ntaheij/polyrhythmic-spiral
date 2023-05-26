@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polyrhythmic Spiral</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <div id="control-bar-wrapper">
+    <div id="control-bar">
+      <button id="sound-toggle" class="toggle" type="button" data-toggled="false" onClick="handleSoundToggle()"
+        title="Toggle Pulse">
+        <i class="fa-solid fa-volume-xmark off"></i>
+        <i class="fa-solid fa-volume-high on"></i>
+      </button>
+      <button id="bg-toggle" class="toggle" type="button" data-toggled="false" onClick="handleBackgroundToggle()"
+        title="Switch Background">
+        <i class="fa-solid fa-image off"></i>
+      </button>
+      <button id="bg-toggle" class="toggle" type="button" data-toggled="false" onClick="handleShuffle()"
+        title="New Polyrhythm">
+        <i class="fa-solid fa-shuffle off"></i>
+      </button>
+    </div>
+  </div>
+
+  <div id="background-image"></div>
+
+  <div id="background-filter"></div>
+
+  <div id="logo">
+    <img src="img/nt_logo_duotone.png" alt="" />
+  </div>
+
+  <div id="sound-message">
+    <p>Click anywhere to toggle sound</p>
+  </div>
+
+  <canvas id="paper"></canvas>
+
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/a94f4c13d9.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
