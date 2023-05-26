@@ -1,6 +1,6 @@
 # Polyrhythmic Spiral
 
-This polyrhythmic (definition below) spiral effect was inspired by the awesome work of `[@project_jdm](https://www.youtube.com/@project_jdm)` on YouTube.
+This polyrhythmic (definition below) spiral effect was inspired by the awesome work of [`@project_jdm`](https://www.youtube.com/@project_jdm) on YouTube.
 
 It was created from scratch with plain old js on the canvas. I basically just reverse engineered the one in his video [here](https://youtu.be/4GaGnU8Ij2Y) to the best of my ability and then kinda morphed it into my own thing. It took a long freakin time.
 
