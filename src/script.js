@@ -53,7 +53,7 @@ const toggles = {
 // ];
 // Here I'm using the same color for all 21 arcs
 const colors = Array(21).fill('#A6C48A');
-const imagesAmount = 3;
+const imagesAmount = 11;
 
 const settings = {
   startTime: new Date().getTime(), // This can be in the future
@@ -71,23 +71,28 @@ const handleSoundToggle = (enabled = !settings.soundEnabled) => {
 
 const handleBackgroundToggle = () => {
   const backgroundElem = document.getElementById('background-image');
-  var style = backgroundElem.currentStyle || window.getComputedStyle(backgroundElem, false),
-      currentImage = style.backgroundImage.slice(4, -1).replace(/"/g, ""),
-      currentIndex = currentImage.split("/").pop().split(".")[0].split("-").pop();
+  var style =
+      backgroundElem.currentStyle ||
+      window.getComputedStyle(backgroundElem, false),
+    currentImage = style.backgroundImage.slice(4, -1).replace(/"/g, ''),
+    currentIndex = currentImage.split('/').pop().split('.')[0].split('-').pop();
 
-  console.log((parseInt(currentIndex) + 1) % imagesAmount);
-  backgroundElem.style.backgroundImage = `url('img/backgrounds/${(parseInt(currentIndex) + 1) % imagesAmount}.webp')`
-}
+  backgroundElem.style.backgroundImage = `url('img/backgrounds/${
+    (parseInt(currentIndex) + 1) % imagesAmount
+  }.webp')`;
+};
 
 const handleShuffle = () => {
   settings.startTime = new Date().getTime();
   settings.duration = Math.floor(Math.random() * 400) + 700;
   settings.maxCycles = Math.floor(Math.random() * 20) + 90;
-  settings.instrument = Array('default', 'wave', 'vibraphone')[Math.floor(Math.random() * 3)];
+  settings.instrument = Array('default', 'wave', 'vibraphone')[
+    Math.floor(Math.random() * 3)
+  ];
   init();
   draw();
   handleBackgroundToggle();
-}
+};
 
 document.onvisibilitychange = () => hideText(false);
 document.onvisibilitychange = () => handleSoundToggle(false);
