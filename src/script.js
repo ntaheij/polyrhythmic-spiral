@@ -86,6 +86,7 @@ const handleShuffle = () => {
   settings.instrument = Array('default', 'wave', 'vibraphone')[Math.floor(Math.random() * 3)];
   init();
   draw();
+  handleBackgroundToggle();
 }
 
 document.onvisibilitychange = () => hideText(false);
